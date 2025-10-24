@@ -1,0 +1,32 @@
+1.  In 100 words or less, describe DFA’s belief about how to find premium in the market.
+    To what degree does their strategy rely on individual equity analysis? Macroeconomic fundamentals? Efficient markets?
+    Are DFA’s funds active or passive?
+    What do DFA and others mean by a “value” stock? And a “growth” stock?
+
+DFA believes markets are broadly efficient, so return premiums come from systematic exposure to factors such as size and 
+value rather than from picking individual winning stocks. Their strategy relies little on analyzing individual companies and does 
+not try to predict macroeconomic trends. Their funds are passive in philosophy but structured to tilt toward factors supported 
+by academic research. A value stock is one that is priced low relative to its book value, while a growth stock is priced high 
+relative to its book value. 
+
+2.  What challenge did DFA’s model see in the 1980’s?
+    And in the 1990’s?
+
+In the 1980s, the size premium appeared weaker, raising doubts about whether small-cap stocks truly outperform. In the 1990s, 
+value stocks significantly underperformed growth stocks, especially during the technology boom, which challenged confidence 
+in the long-run reliability of the value premium.
+
+3.  Exhibit 3 has data regarding a universe of 5,020 firms. How many are considered "large cap”? What percent of the market value
+    do they account for?
+    Exhibit 6 shows that the U.S. value factor (HML) has underperformed the broader U.S. equity market in 1926-2001, including every 
+    subsample except 1963-1981. So why should an investor be interested in this value factor?
+
+
+In Exhibit 3, the largest segment of firms (approximately the top 500–1,000 by size) are considered large cap, and they make up 
+the vast majority of total market value, around 80–90 percent. So while many firms exist, only a small number represent most of the 
+market’s capitalization / value.
+
+Even though the value factor underperformed the broader U.S. market in most subperiods from 1926–2001, investors may still be 
+interested in it because its long-term average return has historically been higher, it provides diversification benefits when 
+combined with growth-focused portfolios, and it may reflect compensation for risk or the correction of persistent market 
+overpricing of growth stocks.
