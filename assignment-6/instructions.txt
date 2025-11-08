@@ -1,0 +1,199 @@
+Data
+
+In this section, we empirically investigate some concerns regarding AQR’s new momentum product. On Canvas, find the data file: data/momentum_data.xlsx.
+
+The first tab contains the momentum factor as an excess return: r_mom:FF.
+
+The second tab contains returns on portfolios corresponding to scored momentum deciles.
+
+r_mom(1) denotes the portfolio of stocks in the lowest momentum decile, the "losers" with the lowest past returns.
+
+r_mom(10) denotes the portfolio of stocks in the highest momentum decile, the "winners" with the highest past returns.
+
+The third tab gives portfolios sorted by momentum and size.
+
+r_momSU denotes the portfolio of small stocks in the top 3 deciles of momentum scores.
+
+r_momBD denotes the portfolio of big stocks in the bottom 3 deciles of momentum scores.
+
+The Fama-French momentum return r_mom:FF is constructed by:
+
+r_mom:FF = 0.5 * (r_momBU + r_momSU) - 0.5 * (r_momBD + r_momSD)
+
+where:
+
+r_momBU: big stocks, winners
+
+r_momSU: small stocks, winners
+
+r_momBD: big stocks, losers
+
+r_momSD: small stocks, losers
+
+2.1 Is momentum still profitable?
+
+The excess returns of lucrative trading strategies often disappear once the strategy is well known. The first widely cited paper on momentum was published in 1993. Questions:
+
+Have momentum returns or risk changed since then?
+
+The AQR case takes place at the end of 2008. Have momentum returns changed in 2009–2024?
+
+Investigate by filling out the summary statistics below for the full sample and three sub samples, using:
+
+r_mom (generic momentum factor)
+
+r_mom(1)
+
+r_mom(10)
+
+r_momSU
+
+r_momBD
+
+r_mom:FF
+
+(a) Using the data provided, fill in Table 1 with the appropriate statistics for r_mom:FF.
+
+(b) Has momentum changed much over time, as seen through these subsample statistics?
+
+(c) Does this data support AQR’s argument that momentum is an important piece of the ideal portfolio? What if mean returns to momentum are in reality near zero after transaction costs? Would there still be evidence here that momentum is valuable?
+
+2.2 Whether a long-only implementation of momentum is valuable
+
+Construct your own long-only implementation, following the Fama-French approach of treating big and small stocks separately. This would be very similar to a scaled version of r_mom:FF.
+
+Define a long-only momentum portfolio:
+
+r_momU = (1/3) * (r_mom(8) + r_mom(9) + r_mom(10)) - r_f
+
+Or in the FF-style, using small and big winners:
+
+r_momU:FF = 0.5 * (r_momBU + r_momSU) - r_f
+
+Table 2: Long-only momentum performance
+
+Subsample: 1927–2024, 1927–1993, 1993–2008, 2009–2024
+For each: report mean, volatility, Sharpe ratio, skewness, correlation to market excess return (r_m), and correlation to value factor (r_v), for r_momU:FF.
+
+Questions:
+
+(a) Fill out Table 2 for the data in the period 1994–2024.
+
+(b) Is long-only momentum as attractive as long-short momentum with respect to mean, volatility, and Sharpe ratio?
+
+(c) Is long-only momentum as diversifying as long-short momentum with respect to market and value premia?
+
+(d) Show a plot of the cumulative product of (1 + r_mom:FF) and (1 + r_momU:FF) over the 1994–2024 subsample.
+
+A focused comparison table:
+
+Table 2 (1994–2024)
+
+Rows:
+
+Long-and-short momentum (r_mom:FF)
+
+Long-only momentum (r_momU:FF)
+
+Columns:
+
+mean, vol, Sharpe, skew, correlation to r_m, correlation to r_v
+
+2.3 Is momentum just data mining, or is it a robust strategy?
+
+Assess how sensitive results are to the threshold for "winners" and "losers". Compare three constructions:
+
+One-decile long-short:
+r_momD1 = r_mom(10) - r_mom(1)
+
+Three-decile long-short:
+r_momD3 = (1/3) * (r_mom(8) + r_mom(9) + r_mom(10))
+- (1/3) * (r_mom(1) + r_mom(2) + r_mom(3))
+
+Five-decile long-short:
+r_momD5 = (1/5) * sum of r_mom(6) through r_mom(10)
+- (1/5) * sum of r_mom(1) through r_mom(5)
+
+Table 3: Robustness of momentum construction (1994–2024)
+
+For each of r_momD1, r_momD3, r_momD5, report:
+
+mean
+
+volatility
+
+Sharpe ratio
+
+skewness
+
+correlation to market excess return (r_m)
+
+correlation to value factor (r_v)
+
+Questions:
+
+(a) Compare all three constructions by filling out Table 3 for 1994–2024.
+
+(b) Do the tradeoffs between the 1-decile, 3-decile, and 5-decile constructions match the theoretical tradeoffs discussed in lecture?
+
+(c) Should AQR’s retail product consider using a 1-decile or 5-decile construction?
+
+(d) Does r_momD3 have similar statistics to the Fama-French construction in (1)? Recall that the Fama-French construction is also a 3-decile long-short construction, but segmented for small and large stocks. Compare the middle row of Table 3 with the top row of Table 2.
+
+2.4 Does implementing momentum require trading many small stocks, causing larger trading costs?
+
+For regulatory and liquidity reasons, AQR is particularly interested in using larger stocks for their momentum baskets, although they will launch one product that focuses on medium-sized stocks.
+
+Use the data on:
+
+Small-stock winners: r_momSU
+
+Small-stock losers: r_momSD
+
+Big-stock winners: r_momBU
+
+Big-stock losers: r_momBD
+
+Construct:
+
+Small-stock momentum portfolio:
+r_momS = r_momSU - r_momSD
+
+Big-stock momentum portfolio:
+r_momB = r_momBU - r_momBD
+
+Table 4: Momentum of small and big stocks (1994–2024)
+
+Rows:
+
+All stocks: r_mom:FF
+
+Small stocks: r_momS
+
+Large stocks: r_momB
+
+Columns:
+
+mean
+
+volatility
+
+Sharpe ratio
+
+skewness
+
+correlation to market excess return (r_m)
+
+Questions:
+
+(a) Fill out Table 4 over 1994–2024.
+
+(b) Is the attractiveness of the momentum strategy mostly driven by small stocks? Does a momentum strategy in large stocks still deliver excess returns at comparable risk?
+
+2.5 Conclusion
+
+What is your assessment of the AQR retail momentum product?
+
+Is it capturing the important features of the Fama-French construction of momentum?
+
+Would you suggest any modifications?
